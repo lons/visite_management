@@ -2,7 +2,7 @@
     'name': 'Gestion des visites',
     'version': '15.0.1.0',
     'author': 'Yeo Ali',
-    'category': 'Human Resources',
+    'category': 'Human Resources/employee',
     'summary': 'Module pour gérer les visites dans une entreprise',
     'description': """
         Ce module permet de gérer les visites dans une entreprise.
@@ -13,7 +13,7 @@
    
     'depends': ['base'],
     'data': [
-        'views/visite_views.xml',
+        'view/visite_views.xml',
     ],
     'icon': "icon.png",
     'installable': True,
