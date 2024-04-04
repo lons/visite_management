@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- Vue pour afficher la liste des visites -->
+        <record id="view_visite_tree" model="ir.ui.view">
+            <field name="name">visite_management.visite.tree</field>
+            <field name="model">visite_management.visite</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="date_visite"/>
+                    <field name="heure_visite"/>
+                    <field name="visiteur"/>
+                    <field name="entreprise"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Vue pour ajouter ou modifier une visite -->
+        <record id="view_visite_form" model="ir.ui.view">
+            <field name="name">visite_management.visite.form</field>
+            <field name="model">visite_management.visite</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="date_visite"/>
+                            <field name="heure_visite"/>
+                            <field name="visiteur"/>
+                            <field name="entreprise"/>
+                            <field name="objet_visite"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Menu pour accéder aux visites -->
+        <menuitem id="menu_visite" name="Gestion des visites" sequence="30"/>
+        <menuitem id="menu_visite_list" name="Liste des visites" parent="menu_visite" action="action_visite_list"/>
+        <menuitem id="menu_visite_create" name="Créer une visite" parent="menu_visite" action="action_visite_create"/>
+
+        <!-- Actions pour lier les vues aux menus -->
+        <act_window id="action_visite_list" name="Liste des visites" res_model="visite_management.visite" view_mode="tree,form"/>
+        <act_window id="action_visite_create" name="Créer une visite" res_model="visite_management.visite" view_mode="form"/>
+
+    </data>
+</odoo>
